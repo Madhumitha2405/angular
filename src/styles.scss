@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1. Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Material Theme */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* 3. MANUAL COLOR OVERRIDE (This will fix your buttons) */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.rose-button {
+  background-color: #A2234F !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  /* Full rounded like your screenshot */
+  font-weight: 700 !important;
+}
+
+.grey-header {
+  background-color: #F9FAFB !important;
+  color: #6b7280 !important;
+  font-weight: 700 !important;
+}
+
+.status-active {
+  background-color: #EBF7EE !important;
+  color: #34A853 !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+}
+
+
+.success-snackbar {
+  background-color: #34A853 !important;
+  /* Success Green */
+  color: white !important;
+  font-weight: bold;
+}
+
+.error-snackbar {
+  background-color: #d32f2f !important;
+  /* Material Red */
+  color: white !important;
+}
+
+.cdk-overlay-container {
+  z-index: 9999 !important;
+}
+
+.mat-mdc-dialog-container {
+  background: white !important;
+  min-width: 300px;
+  min-height: 200px;
+  display: block !important;
+  border-radius: 12px;
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2);
+}

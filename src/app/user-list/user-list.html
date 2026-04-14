@@ -1,0 +1,109 @@
+<div class="main-container">
+    <div class="header-section">
+        <div>
+            <h1 class="page-title">User Management</h1>
+            <nav class="breadcrumb-nav">
+                Dashboard <span class="dot">•</span> User Management <span class="dot">•</span> List
+            </nav>
+        </div>
+
+        <div class="button-group">
+            <button mat-stroked-button class="btn-maroon-outline">
+                <mat-icon>filter_alt</mat-icon> Project Report
+            </button>
+
+            <button mat-flat-button class="btn-maroon-solid" (click)="openCreateDialog()">
+                <mat-icon>add</mat-icon> New User
+            </button>
+
+            <button mat-stroked-button class="btn-wfh-outline" (click)="openWFHDialog()">
+                <mat-icon>filter_alt</mat-icon> WFH Request
+            </button>
+
+            <button mat-stroked-button class="btn-maroon-outline">
+                <mat-icon>download</mat-icon> Employee Tracker
+            </button>
+        </div>
+    </div>
+
+    <div class="table-card">
+        <div class="search-container">
+            <div class="search-box">
+                <mat-icon class="search-icon">search</mat-icon>
+                <input (keyup)="applyFilter($event)" type="text" placeholder="Search user..." class="search-input">
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table mat-table [dataSource]="dataSource" matSort class="w-full">
+
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef class="checkbox-cell">
+                        <mat-checkbox (change)="masterToggle()"
+                            [checked]="selection.has(dataSource.data[0]) && isAllSelected()"
+                            color="warn"></mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let row" class="checkbox-cell">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="selection.has(row) ? selection.delete(row) : selection.add(row)"
+                            [checked]="selection.has(row)" color="warn"></mat-checkbox>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header"> Name </th>
+                    <td mat-cell *matCellDef="let row">
+                        <div class="user-cell">
+                            <div class="avatar">{{ row.name.charAt(0) }}</div>
+                            <span class="user-name">{{ row.name }}</span>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="employeeId">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Employee_Id </th>
+                    <td mat-cell *matCellDef="let row" class="table-data"> {{row.employeeId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Email </th>
+                    <td mat-cell *matCellDef="let row" class="table-data"> {{row.email}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="role">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Role </th>
+                    <td mat-cell *matCellDef="let row" class="table-data"> {{row.role}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="managerId">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Manager_Id </th>
+                    <td mat-cell *matCellDef="let row" class="table-data"> {{row.managerId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Status </th>
+                    <td mat-cell *matCellDef="let row">
+                        <span class="status-pill"
+                            [ngClass]="row.status === 'Active' ? 'status-active' : 'status-inactive'">
+                            {{ row.status }}
+                        </span>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Actions </th>
+                    <td mat-cell *matCellDef="let row">
+                        <button mat-icon-button color="warn" (click)="deleteUser(row)">
+                            <mat-icon>delete_outline</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-row sticky top-0 z-10"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="data-row"></tr>
+            </table>
+        </div>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons class="custom-paginator"></mat-paginator>
+    </div>
+</div>

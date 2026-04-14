@@ -1,0 +1,66 @@
+<div class="dialog-wrapper">
+  <div class="dialog-header">
+    <h2 class="title">WFH Request</h2>
+    <div class="breadcrumbs">
+      Dashboard <span class="dot">•</span> Create Request <span class="dot">•</span> <span class="active">Req</span>
+    </div>
+  </div>
+
+  <mat-dialog-content>
+    <form [formGroup]="wfhForm" class="fields-container">
+      <div class="form-row-3">
+        <mat-form-field appearance="outline">
+          <mat-label>From Date</mat-label>
+          <input matInput [matDatepicker]="fromPicker" formControlName="fromDate" (dateChange)="calculateDays()">
+          <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+          <mat-datepicker #fromPicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>To Date</mat-label>
+          <input matInput [matDatepicker]="toPicker" formControlName="toDate" (dateChange)="calculateDays()">
+          <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+          <mat-datepicker #toPicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>No of Days *</mat-label>
+          <input matInput formControlName="noOfDays" readonly>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Reason</mat-label>
+        <textarea matInput formControlName="reason" rows="3" placeholder="Enter your reason here..."></textarea>
+      </mat-form-field>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Reporting Manager</mat-label>
+          <input matInput formControlName="reportingManager" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>PDO Manager</mat-label>
+          <mat-select formControlName="pdoManager">
+            <mat-option value="Manager A">Manager A</mat-option>
+            <mat-option value="Manager B">Manager B</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>BackLog</mat-label>
+        <input matInput formControlName="backlog" placeholder="Mention any backlogs...">
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="cancel-link">Cancel</button>
+    <div class="action-buttons">
+      <button mat-flat-button class="save-btn" (click)="onSave()">SAVE</button>
+      <button mat-flat-button class="submit-btn" (click)="onSubmit()">SUBMIT</button>
+    </div>
+  </mat-dialog-actions>
+</div>

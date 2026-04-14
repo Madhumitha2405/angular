@@ -1,0 +1,211 @@
+/* Color Constants */
+$maroon: #A2234F;
+$light-grey-bg: #F9FAFB;
+$focusr-maroon: #A2234F; 
+
+.main-container {
+  padding: 2rem;
+  background-color: $light-grey-bg;
+  min-height: 100vh;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; // Allows buttons to wrap on mobile
+  gap: 1rem;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.breadcrumb-nav {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin-top: 0.25rem;
+  .dot { margin: 0 0.5rem; color: #D1D5DB; }
+}
+
+/* BUTTONS */
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-maroon-solid {
+  background-color: transparent !important;
+  color: $maroon !important;
+  border: 1.5px solid $maroon !important;
+  border-radius: 50px !important;
+  padding: 0 1.5rem !important;
+  font-weight: 600 !important;
+
+  &:hover {
+    background-color: #F3F4F6 !important;
+  }
+}
+
+.btn-maroon-outline {
+  color: $maroon !important;
+  border: 1px solid $maroon !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+}
+
+.btn-wfh-outline {
+  border: 1.5px solid $focusr-maroon !important;
+  border-radius: 8px !important;
+  color: $focusr-maroon !important;
+  font-weight: 700 !important;
+  padding: 0 16px !important;
+  height: 40px !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+
+  mat-icon {
+    color: $focusr-maroon !important;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: rgba(162, 35, 79, 0.04) !important;
+  }
+}
+
+/* TABLE CARD & RESPONSIVENESS */
+.table-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #F3F4F6;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; // Enables horizontal scroll
+  -webkit-overflow-scrolling: touch;
+  
+  /* Custom Scrollbar for better UX */
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
+  }
+}
+
+table {
+  width: 100%;
+  min-width: 1000px; /* Forces table to maintain width so it scrolls instead of squishing */
+}
+
+.search-container {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #F9FAFB;
+}
+
+.search-box {
+  position: relative;
+  max-width: 300px;
+  .search-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+    font-size: 18px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2.2rem;
+    border: none;
+    border-bottom: 1px solid #D1D5DB;
+    outline: none;
+    font-size: 0.875rem;
+    &:focus { border-color: $maroon; }
+  }
+}
+
+/* TABLE STYLING */
+::ng-deep {
+  .header-row {
+    background-color: $light-grey-bg !important;
+    height: 48px;
+  }
+
+  .table-header {
+    color: #374151 !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    white-space: nowrap; // Prevents headers from wrapping
+  }
+
+  .user-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    background: #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4B5563;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .user-name { font-weight: 600; color: #111827; font-size: 13px; white-space: nowrap; }
+  .table-data { font-size: 13px; color: #4B5563; white-space: nowrap; }
+
+  .status-pill {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .status-active { background: #EBF7EE; color: #34A853; }
+  .status-inactive { background: #FDECEC; color: #E65141; }
+}
+
+/* ACTIONS COLUMN */
+.mat-column-actions {
+  width: 80px;
+  text-align: center;
+  position: sticky; // Keeps delete button visible on scroll
+  right: 0;
+  background: white;
+  z-index: 1;
+  border-left: 1px solid #F3F4F6;
+  
+  button {
+    color: #E65141;
+    &:hover {
+      background-color: rgba(230, 81, 65, 0.04);
+    }
+  }
+}
+
+.checkbox-cell {
+    width: 48px;
+}

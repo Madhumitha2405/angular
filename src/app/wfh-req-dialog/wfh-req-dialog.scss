@@ -1,0 +1,52 @@
+$focusr-red: #e65141;
+
+.dialog-wrapper {
+  padding: 10px;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.cancel-link {
+  color: #637381;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.save-btn {
+  background-color: lighten($focusr-red, 10%) !important;
+  color: white !important;
+  margin-right: 8px;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  background-color: $focusr-red !important;
+  color: white !important;
+  border-radius: 8px;
+}
+
+/* Breadcrumb Styling */
+.dialog-header {
+  margin-bottom: 20px;
+  .title { margin: 0; font-size: 24px; font-weight: 700; }
+  .breadcrumbs {
+    font-size: 13px;
+    color: #637381;
+    .active { color: #919EAB; }
+    .dot { margin: 0 4px; }
+  }
+}
