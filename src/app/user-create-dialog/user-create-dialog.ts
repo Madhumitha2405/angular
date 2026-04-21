@@ -48,6 +48,21 @@ export class UserCreateDialog {
       fullName: ['', Validators.required],
       employeeId: ['', Validators.required],
       designation: ['', Validators.required],
+      passportName: [''],
+      baseLocation: [''],
+      reportingLocation: [''],
+      kpiKraGroup: ['', Validators.required],
+      prevDomainExp: [''],
+      prevRelevantExp: [''],
+      ugDegree: [''],
+      ugYearPassing: [null],
+      pgDegree: [''],
+      pgYearPassing: [null],
+      otherCertifications: [''],
+      salaryConversion: [null],
+      onboardingCategory: [''],
+      profileOrigin: [''],
+      source: [''],
       primaryProject: ['', Validators.required],
       billable: [false],
       status: ['Active'],
@@ -55,7 +70,6 @@ export class UserCreateDialog {
       reportingManager: ['', Validators.required],
       managerId:['',Validators.required],
       department: ['', Validators.required],
-      reportingLocation: [''],
       email: ['', [Validators.required, Validators.email]],
       role: ['Team member'],
       username: [''],
@@ -64,27 +78,22 @@ export class UserCreateDialog {
       doj: ['', Validators.required],
     });
   }
-  onSubmit() {
-  if (this.userForm.valid) {
-    // Alert the user
-    this.snackBar.open('User Created Successfully!', 'OK', { duration: 3000 });
-
-    const formData = this.userForm.value;
-    
-    //  Reset the form to its original state
-    this.userForm.reset({
-      status: 'Active', // Default values you want to keep
-      billable: false,
-      role: 'Team member'
-    });
-    
-    // Reset the image preview
-    this.imagePreview = null;
-
-    // Finally close the dialog
-    this.dialogRef.close(formData);
+ onSubmit() {
+    if (this.userForm.valid) {
+      this.snackBar.open('User Created Successfully!', 'OK', { duration: 3000 });
+      const formData = this.userForm.getRawValue();
+      this.userForm.reset({
+        status: 'Active',
+        billable: false,
+        role: 'Team member'
+      });
+      this.imagePreview = null;
+      this.dialogRef.close(formData);
+    } else {
+      this.userForm.markAllAsTouched();
+    }
   }
-}
+
   onFileSelected(event: any) {
     const file = event.target.files[0];
     if (file) {

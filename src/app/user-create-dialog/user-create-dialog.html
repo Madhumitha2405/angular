@@ -34,16 +34,66 @@
           <input matInput formControlName="employeeId" placeholder="Employee id">
         </mat-form-field>
       </div>
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Passport Name</mat-label>
+          <input matInput formControlName="passportName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Base Location</mat-label>
+          <mat-select formControlName="baseLocation">
+            <mat-option value="Bangalore">Bangalore</mat-option>
+            <mat-option value="Bhopal">Bhopal</mat-option>
+            <mat-option value="Chennai">Chennai</mat-option>
+            <mat-option value="Coimbatore">Coimbatore</mat-option>
+            <mat-option value="D]elhi">Delhi</mat-option>
+            <mat-option value="Hyderabad">Hyderabad</mat-option>
+            <mat-option value="Mumbai">Mumbai</mat-option>
+            <mat-option value="Pune">Pune</mat-option>
+            <mat-option value="Ranipet">Ranipet</mat-option>
+            <mat-option value="Salem">Salem</mat-option>
+            <mat-option value="WFH">WFH</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
       <div class="form-row">
         <mat-form-field appearance="outline">
           <mat-label>User Designation</mat-label>
           <mat-select formControlName="designation">
-            <mat-option value="Developer">Developer</mat-option>
-            <mat-option value="Associate Developer">Associate Developer</mat-option>
-            <mat-option value="Senior Developer">Senior Developer</mat-option>
-            <mat-option value="HR">HR</mat-option>
-            <mat-option value="Intern">Intern</mat-option>
+            <mat-error>User Designation is required</mat-error>
+            <mat-option value="Chief Manager">Chief Manager</mat-option>
+            <mat-option value="Manager">Manager</mat-option>
+            <mat-option value="Team Member">Team Member</mat-option>
+            <mat-option value="Practice Manager">Practice Manager</mat-option>
+            <mat-option value="senior HR executive talent acquisition">senior HR executive talent acquisition</mat-option>
+            <mat-option value="oracle techno functional consultant">oracle techno functional consultant</mat-option>
+            <mat-option value="trainee consultant">trainee consultant</mat-option>
+            <mat-option value="principal consultant">principal consultant</mat-option>
+            <mat-option value="oracle technical consultant">oracle technical consultant</mat-option>
+            <mat-option value="HR executive talent acquisition">HR executive talent acquisition</mat-option>
+            <mat-option value="PMO executive">PMO executive</mat-option>
+            <mat-option value="junior full stack developer">junior full stack developer</mat-option>
+            <mat-option value="Full stack developer trainee">Full stack developer trainee</mat-option>
+            <mat-option value="HR executive">HR executive</mat-option>
+            <mat-option value="associate consultant- Oracle SCM">associate consultant- Oracle SCM</mat-option>
+            <mat-option value="Trainee consultant - Oracle DBA">Trainee consultant - Oracle DBA</mat-option>
+            <mat-option value="Associate full stack developer">Associate full stack developer</mat-option>
+            <mat-option value="Lead consultant oracle applications">Lead consultant oracle applications</mat-option>
+            <mat-option value="practice head">practice head</mat-option>
+            <mat-option value="associate consultant- Oracle finance">associate consultant- Oracle finance</mat-option>
+            <mat-option value="SAP MM consultant">SAP MM consultant</mat-option>
+            <mat-option value="Senior functional consultant - oracle SCM">Senior functional consultant - oracle SCM</mat-option>
+            <mat-option value="Associate consultant - SAP MM&SD">Associate consultant - SAP MM&SD</mat-option>
+            <mat-option value="Associate consultant - SAP PP">Associate consultant - SAP PP</mat-option>
+            <mat-option value="Associate consultant - SAP ABAP">Associate consultant - SAP ABAP</mat-option>
+            <mat-option value="Associate consultant - Oracle SCM">Associate consultant - Oracle SCM</mat-option>
+            <mat-option value="Associate consultant - Oracle HRMS">Associate consultant - Oracle HRMS</mat-option>
+            <mat-option value="Associate consultant - Oracle DBA">Associate consultant - Oracle DBA</mat-option>
+            <mat-option value="Associate consultant - Oracle FICO">Associate consultant - Oracle FICO</mat-option>
+            <mat-option value="Associate consultant - Oracle technical">Associate consultant - Oracle technical</mat-option>
+            <mat-option value="Developer AI">Developer AI</mat-option>
+
           </mat-select>
           <mat-error>Designation is required</mat-error>
         </mat-form-field>
@@ -79,9 +129,22 @@
         <mat-form-field appearance="outline">
           <mat-label>Reporting Manager</mat-label>
           <mat-select formControlName="reportingManager">
-            <mat-option value="Manager 1">Manager 1</mat-option>
-            <mat-option value="Manager 2">Manager 2</mat-option>
-            <mat-option value="Manager 3">Manager 3</mat-option>
+            <mat-error>Reporting manager is required</mat-error>
+            <mat-option value="Sai(practice manager)">Sai(practice manager)</mat-option>
+            <mat-option value="Gokilavani K (Managher-HR)">Gokilavani K (Managher-HR)</mat-option>
+            <mat-option value="Sahitya Rengaranjan (HR executive)">Sahitya Rengaranjan (HR executive)</mat-option>
+            <mat-option value="Vaidehi S (Senior Consultant-Oracle Technical)">Vaidehi S (Senior Consultant-Oracle Technical)</mat-option>
+            <mat-option value="Kaviya S (Manager)">Kaviya S (Manager)</mat-option>
+            <mat-option value="Kaveri Balakrishnan(Team member)">Kaveri Balakrishnan(Team member)</mat-option>
+            <mat-option value="Murugiah S (Practice head)">Murugiah S (Practice head)</mat-option>
+            <mat-option value="Manoj kumar (Practice Manager)">Manoj kumar (Practice Manager)</mat-option>
+            <mat-option value="Ajith Kumar (Manager)">Ajith Kumar (Manager)</mat-option>
+            <mat-option value="Muthuganesh (Senior Developer - Java Full Stack)">Muthuganesh (Senior Developer - Java Full Stack)</mat-option>
+            <mat-option value="Arun Kumar S P (Associate consultant- SAP FICO)">Arun Kumar S P (Associate consultant-SAP FICO)</mat-option>
+            <mat-option value="Kavin (Practice Manager)">Kavin (Practice Manager)</mat-option>
+            <mat-option value="Ranjith Ayyavu (Manager)">Ranjith Ayyavu (Manager)</mat-option>
+            <mat-option value="Shrinivas">Shrinivas </mat-option>
+
           </mat-select>
         </mat-form-field>
         <mat-form-field appearance="outline">
@@ -91,10 +154,173 @@
         <mat-form-field appearance="outline">
           <mat-label>Department</mat-label>
           <mat-select formControlName="department">
-            <mat-option value="IT">IT Department</mat-option>
-            <mat-option value="HR">HR Department</mat-option>
-            <mat-option value="Consulting">Technical Consulting Department</mat-option>
+            <mat-option value="Accounts">Accounts</mat-option>
+            <mat-option value="Admin">Admin</mat-option>
+            <mat-option value="BI">BI</mat-option>
+            <mat-option value="Competency">Competency</mat-option>
+            <mat-option value="HR&Admin">HR & Admin</mat-option>
+            <mat-option value="Management">Management</mat-option>
+            <mat-option value="Oracle DBA">Oracle DBA</mat-option>
+            <mat-option value="Oracle Finance">Oracle Finance</mat-option>
+            <mat-option value="Oracle HRMS & HCM">Oracle HRMS & HCM</mat-option>
+            <mat-option value="Oracle SCM">Oracle SCM</mat-option>
+            <mat-option value="Oracle Technical">Oracle Technical</mat-option>
+            <mat-option value="PMO">PMO</mat-option>
+            <mat-option value="Product Development">Product Development</mat-option>
+            <mat-option value="Sales & Marketing">Sales & Marketing</mat-option>
+            <mat-option value="SAP ABAP">SAP ABAP</mat-option>
+            <mat-option value="SAP FICO">SAP FICO</mat-option>
+            <mat-option value="SAP MM">SAP MM</mat-option>
+            <mat-option value="SAP PP">SAP PP</mat-option>
+            <mat-option value="SAP SD">SAP SD</mat-option>
+
           </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>KPI-KRA Group</mat-label>
+          <mat-select formControlName="kpiKraGroup">
+            <mat-option value="Intern Consultant ">Intern Consultant </mat-option>
+            <mat-option value="Associate consultant">Associate consultant</mat-option>
+            <mat-option value="consultant">consultant</mat-option>
+            <mat-option value="senior consultant">senior consultant</mat-option>
+            <mat-option value="project principal solution">project principal solution</mat-option>
+            <mat-option value="bench">bench</mat-option>
+            <mat-option value="T&M">T&M</mat-option>
+            <mat-option value="Jr.Engineer">Jr.Engineer</mat-option>
+            <mat-option value="HR executive ">HR executive </mat-option>
+            <mat-option value="PMO">PMO</mat-option>
+            <mat-option value="PMO2">PMO2</mat-option>
+            <mat-option value="Senior HR">Senior HR</mat-option>
+
+          </mat-select>
+          <mat-error>KPI-KRA Group is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Reporting Location</mat-label>
+          <mat-select formControlName="reportingLocation">
+            <mat-error>Location is required</mat-error>
+            <mat-option value="Bangalore Bhel">Bangalore Bhel</mat-option>
+            <mat-option value="Bhiwadi">Bhiwadi</mat-option>
+            <mat-option value="Bihar">Bihar</mat-option>
+            <mat-option value="Chennai">Chennai</mat-option>
+            <mat-option value="Chennai-SIMPSON">Chennai-SIMPSON</mat-option>
+            <mat-option value="Chennai-ESPL">Chennai-ESPL</mat-option>
+            <mat-option value="Chennai-Lactalis">Chennai-Lactalis</mat-option>
+            <mat-option value="Coimbatore - LMW">Coimbatore - LMW</mat-option>
+            <mat-option value="Coimbatore - LMW unit 1">Coimbatore - LMW unit 1</mat-option>
+            <mat-option value="Coimbatore SGL">Coimbatore SGL</mat-option>
+            <mat-option value="Delhi-BHEL">Delhi-BHEL</mat-option>
+            <mat-option value="Faridabad">Faridabad</mat-option>
+            <mat-option value="Gurugram">Gurugram</mat-option>
+            <mat-option value="Hyderabad - Lactalis">Hyderabad - Lactalis</mat-option>
+            <mat-option value="Karnataka-WCPM">Karnataka-WCPM</mat-option>
+            <mat-option value="Odisha">Odisha</mat-option>
+            <mat-option value="Salem-Main">Salem-Main</mat-option>
+            <mat-option value="Salem - ELCOSZ">Salem - ELCOSZ</mat-option>
+            <mat-option value="TNPL Unit 2 -Mondapatti-Trichy">TNPL Unit 2 -Mondapatti-Trichy</mat-option>
+            <mat-option value="TNPL-Karur">TNPL-Karur</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Previous Domain Exp</mat-label>
+          <input matInput formControlName="prevDomainExp">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Previous Relevant Exp</mat-label>
+          <input matInput formControlName="prevRelevantExp">
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>UG Degree</mat-label>
+          <mat-select formControlName="ugDegree">
+            <mat-option value="BE.CSE">BE.CSE</mat-option>
+            <mat-option value="BE.EEE">BE.EEE</mat-option>
+            <mat-option value="BE.Automobile">BE.Automobile</mat-option>
+            <mat-option value="BE.ECE">BE.ECE</mat-option>
+            <mat-option value="BE.CIVIL">BE.CIVIL</mat-option>
+            <mat-option value="BE.MECH">BE.MECH</mat-option>
+            <mat-option value="BE.Mechatronics">BE.Mechatronics</mat-option>
+            <mat-option value="BE.EIE">BE.EIE</mat-option>
+            <mat-option value="BE.Biomedical">BE.Biomedical</mat-option>
+            <mat-option value="B.Tech-IT">B.Tech-IT</mat-option>
+            <mat-option value="B.Tech-CS-BS">B.Tech-CS-BS</mat-option>
+            <mat-option value="B.Tech-Food Technololgy">B.Tech-Food Technololgy</mat-option>
+            <mat-option value="B.Tech- AIDS">B.Tech- AIDS</mat-option>
+            <mat-option value="B.Sc.Computer Science">B.Sc.Computer Science</mat-option>
+            <mat-option value="B.Sc.IT">B.Sc.IT</mat-option>
+            <mat-option value="B.Sc.Mathematics">B.Sc.Mathematics</mat-option>
+            <mat-option value="B.Sc.Physics">B.Sc.Physics</mat-option>
+            <mat-option value="B.Sc.Chemistry">B.Sc.Chemistry</mat-option>
+            <mat-option value="B.Sc.Botany">B.Sc.Botany</mat-option>
+            <mat-option value="B.Sc.Zoology">B.Sc.Zoology</mat-option>
+            <mat-option value="B.Sc.Microbiology">B.Sc.Microbiology</mat-option>
+            <mat-option value="B.Sc.Biochemistry">B.Sc.Biochemistry</mat-option>
+            <mat-option value="B.Sc.Electronics">B.Sc.Electronics</mat-option>
+            <mat-option value="B.Sc.Biotech">B.Sc.Biotech</mat-option>
+            <mat-option value="B.Sc.Environmental Science">B.Sc.Environmental Science</mat-option>
+            <mat-option value="B.Sc.Agriculture">B.Sc.Agriculture</mat-option>
+            <mat-option value="BA.English literature">BA.English literature</mat-option>
+            <mat-option value="BA.Tamil Literature">BA.Tamil Literature</mat-option>
+            <mat-option value="BA.History">BA.History</mat-option>
+            <mat-option value="BA.Economics">BA.Economics</mat-option>
+            <mat-option value="BA.Political science">BA.Political science</mat-option>
+            <mat-option value="BA-Psychology">BA-Psychology</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>UG year passing</mat-label>
+          <input matInput [matDatepicker]="ugp" formControlName="ugYearPassing">
+          <mat-datepicker-toggle matSuffix [for]="ugp"></mat-datepicker-toggle>
+          <mat-datepicker #ugp></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>PG Degree</mat-label>
+          <mat-select formControlName="pgDegree">
+            <mat-option value="MBA-HR">MBA-HR</mat-option>
+            <mat-option value="CMA-INTER">CMA-INTER</mat-option>
+            <mat-option value="M.COM">M.COM</mat-option>
+            <mat-option value="MCA">MCA</mat-option>
+            <mat-option value="MBA-Finance">MBA-Finance</mat-option>
+            <mat-option value="MBA-Logistics & Finance">MBA-Logistics & Finance</mat-option>
+            <mat-option value="MBA-Operations">MBA-Operations</mat-option>
+            <mat-option value="MBA-SCM & Logistics">MBA-SCM & Logistics</mat-option>
+            <mat-option value="MBA-Finance & Marketing">MBA-Finance & Marketing</mat-option>
+            <mat-option value="MBA-International business">MBA-International business</mat-option>
+            <mat-option value="MBA-Data Analytics">MBA-Data Analytics</mat-option>
+            <mat-option value="MBA-Business analytics & marketing">MBA-Business analytics & marketing</mat-option>
+            <mat-option value="ICMA">ICMA</mat-option>
+            <mat-option value="CMA-Qualified">CMA-Qualified</mat-option>
+            <mat-option value="M.Sc.IT">M.Sc IT</mat-option>
+            <mat-option value="M.Sc.Mathematics">M.Sc.Mathematics</mat-option>
+            <mat-option value="M.Sc.Physics">M.Sc.Physics</mat-option>
+            <mat-option value="M.Sc.Chemistry">M.Sc.Chemistry</mat-option>
+            <mat-option value="M.Sc.Botany">M.Sc.Botany</mat-option>
+            <mat-option value="M.Sc.Zoology">M.Sc.Zoology</mat-option>
+            <mat-option value="M.Sc.Microbiology">M.Sc.Microbiology</mat-option>
+            <mat-option value="M.Sc.Biotech">M.Sc.Biotech</mat-option>
+            <mat-option value="M.Sc.Biochemistry">M.Sc.Biochemistry</mat-option>
+            <mat-option value="M.Sc.Electronics">M.Sc.Electronics</mat-option>
+            <mat-option value="M.Sc.Environmental Science">M.Sc.Environmental Science</mat-option>
+            <mat-option value="MA.English literature">MA.English literature</mat-option>
+            <mat-option value="MA.Tamil Literature">MA.Tamil Literature</mat-option>
+            <mat-option value="MA.History">MA.History</mat-option>
+            <mat-option value="MA.Economics">MA.Economics</mat-option>
+            <mat-option value="MA.Plotical Science">MA.Plotical Science</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>PG year passing</mat-label>
+          <input matInput [matDatepicker]="pgp" formControlName="pgYearPassing">
+          <mat-datepicker-toggle matSuffix [for]="pgp"></mat-datepicker-toggle>
+          <mat-datepicker #pgp></mat-datepicker>
         </mat-form-field>
       </div>
 
@@ -108,9 +334,22 @@
         <mat-form-field appearance="outline">
           <mat-label>Role</mat-label>
           <mat-select formControlName="role">
-            <mat-option value="Admin">Admin</mat-option>
+            <mat-option value="Role Admin">Role Admin</mat-option>
+            <mat-option value="Role Manager">Role Manager</mat-option>
+            <mat-option value="Role Sales executive">Role Sales executive</mat-option>
             <mat-option value="Team member">Team member</mat-option>
-            <mat-option value="Team lead">Team lead</mat-option>
+            <mat-option value="Human resource">Human resource</mat-option>
+            <mat-option value="CRM Representative">CRM Representative</mat-option>
+            <mat-option value="CRM Manager">CRM Manager</mat-option>
+            <mat-option value="Manager and CRM Manager">Manager and CRM Manager</mat-option>
+            <mat-option value="Team Member and CRM Representative">Team Member and CRM Representative</mat-option>
+            <mat-option value="Role sales executive and CRM Representative">Role sales executive and CRM
+              Representative</mat-option>
+            <mat-option value="Role Manager and CRM representative">Role Manager and CRM representative</mat-option>
+            <mat-option value="Role Team member and Travel Approver">Role Team member and Travel Approver</mat-option>
+            <mat-option value="PMO Executive">PMO Executive</mat-option>
+            <mat-option value="Managing food menus and item details ">Managing food menus and item details </mat-option>
+
           </mat-select>
         </mat-form-field>
       </div>
